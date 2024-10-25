@@ -14,7 +14,7 @@ Tool for extract FAT/DAT archives from Far Cry Instincts
 
 # Tested games
 | Game   |
-|--- |---  |--- |
+|--- |
 | Far Cry Instincts (Aug 5, 2005 prototype) |
 | Far Cry Instincts (Feb 4, 2006 prototype) |
 | Far Cry Instincts (Jun 19, 2006 demo) |
