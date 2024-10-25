@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0CAF297-FFF3-4A62-9F74-AA75BF411E05}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FCI.Unpacker</RootNamespace>
+    <AssemblyName>FCI.Unpacker</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileSystem\Compression\7zip\Common\CommandLineParser.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Common\CRC.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Common\InBuffer.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Common\OutBuffer.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZMA\LzmaBase.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZMA\LzmaDecoder.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZMA\LzmaEncoder.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZ\IMatchFinder.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZ\LzBinTree.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZ\LzInWindow.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\LZ\LzOutWindow.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\RangeCoder\RangeCoder.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="FileSystem\Compression\7zip\Compress\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="FileSystem\Compression\7zip\ICoder.cs" />
+    <Compile Include="FileSystem\Compression\LZMA.cs" />
+    <Compile Include="FileSystem\Other\Helpers.cs" />
+    <Compile Include="FileSystem\Other\Utils.cs" />
+    <Compile Include="FileSystem\Package\FatEntry.cs" />
+    <Compile Include="FileSystem\Package\FatHash.cs" />
+    <Compile Include="FileSystem\Package\FatHashList.cs" />
+    <Compile Include="FileSystem\Package\FatHeader.cs" />
+    <Compile Include="FileSystem\Package\FatUnpack.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
