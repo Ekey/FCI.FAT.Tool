@@ -31,7 +31,7 @@ namespace FCI.Unpacker
                 {
                     bOldFatFormat = true;
                 }
-                else if ((m_Header.dwTotalFiles * 16) + 8 == dwFatSize)
+                else
                 {
                     bOldFatFormat = false;
                 }
